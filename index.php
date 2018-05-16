@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
+<?php $pageHeading = "Home"; ?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>welcome to ThePlatform </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
+<?php include_once("./layouts/header.php"); ?>
 
-<body>
-    <h1>The Platform</h1>
-    <hr/>
-    <ul class="menu">
-        <li>
-            <a href="index.php">Home</a>
-        </li>
-        <li>
-            <a href="contacts.php">Contacts</a>
-        </li>
-    </ul>
-
-
+<div class="container">
     <?php
         $fruits = [
             "Orange",
@@ -107,8 +87,6 @@
                     <?php } ?>
                 </tbody>
             </table>
+</div>
 
-
-</body>
-
-</html>
+<?php include_once("./layouts/footer.php"); ?>

@@ -28,3 +28,8 @@ th {
     text-decoration: none;
     color: white;
 }
+
+footer {
+    font-size: 0.8em;
+    background: #ccc;
+}
