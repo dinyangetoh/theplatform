@@ -25,15 +25,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.php">Home
+                            <a class="nav-link" href="./index.php">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contacts.php">Contacts</a>
+                            <a class="nav-link" href="./contacts.php">Contacts</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="jobs.php">Jobs</a>
+                            <a class="nav-link" href="./jobs.php">Jobs</a>
                         </li>
 
                     </ul>
