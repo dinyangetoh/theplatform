@@ -15,6 +15,19 @@ if ($conn->connect_error) {
 
 $id = $_GET['id'];
 
+if(isset($_POST['delete-contact'])){
+    
+
+    if($conn->query("DELETE FROM contacts WHERE id='$id'")){
+        $message= "Contact deleted successfully";
+        $msgClass = "success";
+
+        header("Location: contacts.php");
+    }else{
+        $message = "Error deleting contact". mysqli_error($conn);;
+        $msgClass = "danger";
+    }
+}
 
 if(isset($_POST['update-contact'])){
     $name = trim($_POST['name']);
@@ -107,7 +120,7 @@ $conn->close();
 
                 <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit-contact">Edit</button>
 
-                <button class="btn btn-danger btn-sm">Delete</button>
+                <button type="button" name="delete-contact" onClick="deleteContact()" class="btn btn-danger btn-sm">Delete</button>
 
             </div>
 
@@ -184,4 +197,22 @@ $conn->close();
             </div>
         </div>
     </div>
+
+    <form id="delete-contact-form" method="post" action="">
+        <input name="delete-contact" type="hidden">
+    </form>
+
+
+    <script>
+        function deleteContact() {
+            if (confirm("Are you sure you want to delete contact?")) {
+                console.log("Delete")
+                var form = document.getElementById("delete-contact-form");
+
+                form.submit();
+            } else {
+                console.log("Donnot delete")
+            }
+        }
+    </script>
     <?php include_once("./layouts/footer.php"); ?>

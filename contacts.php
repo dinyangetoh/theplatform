@@ -63,7 +63,57 @@ $result = $conn->query($sql);
             <?php 
                 if($result->num_rows >0){
             ?>
+            <div class="row mb-5">
+                <?php 
+                        
+                        while($contact= $result->fetch_assoc()){
+                    ?>
+                <div class="col-12 col-md-4 col-lg-3 mb-3">
 
+                    <style>
+                        .score {
+                            margin: 0 auto;
+                            height: 100px;
+                            width: 100px;
+                            border-radius: 50%;
+                            background: black;
+                            color: white;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 2em;
+                        }
+
+                        .score span {
+                            padding: 40px;
+                        }
+                    </style>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="score mb-3">
+                                <div>
+                                    <?= $contact['jamb_score'] ?>
+                                </div>
+                            </div>
+                            <h5 class="card-title text-center">
+                                <a href="view-contact.php?id=<?= $contact['id'] ?>">
+                                    <?= $contact['name'] ?>
+                                </a>
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+
+                            </h6>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <?php } ?>
+            </div>
+
+            <!--
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -105,7 +155,7 @@ $result = $conn->query($sql);
                 echo "No contacts found";
             }
             ?>
-
+-->
         </div>
     </section>
 
